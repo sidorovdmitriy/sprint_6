@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.mockito.Mockito;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
 public class LionTestWithParams {
@@ -21,7 +21,6 @@ public class LionTestWithParams {
     public void setUp() {
         feline = Mockito.mock(Feline.class);
     }
-
     public LionTestWithParams(String sex, boolean hasMane) {
         this.sex = sex;
         this.hasMane = hasMane;
@@ -35,7 +34,7 @@ public class LionTestWithParams {
         };
     }
 
-    @Test
+  @Test
     public void testDoesHaveMane() throws Exception {
         lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();
